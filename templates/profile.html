@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>otaku</title>
+		<link rel="stylesheet" href="../static/syles/index.css" />
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="title">
+				<h4>Facebook</h4>
+			</div>
+			<div class="pages">
+				<h5 data-content="posts" id="home" >
+					<a href="/">Posts</a>
+				</h5>
+				<h5 data-content="profile" id="pro" class="active">
+					<a href="/profile">Profile</a>
+				</h5>
+				<h5 id="search">
+					<a href="/logout">logout</a>
+				</h5>
+			</div>
+		</nav>
+		<main class="profile">
+			<div>
+				user name : {{user}}
+			</div>
+			<div>
+				email : {{email}}
+			</div>
+		</main>
+			
+				<script>
+					window.onload = () => {
+						imgs = document.querySelectorAll("img");
+						imgs.forEach((img) => {
+							img.src = img.dataset["src"];
+						});
+					};
+				</script>
+			</div>
+		</main>
+	</body>
+</html>

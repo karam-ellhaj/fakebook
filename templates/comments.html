@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../static/syles/comments.css" />
+    </head>
+    <body>
+        <main>
+            <div class="comments-section">
+            <form
+                method="POST"
+                action="/send_comment"
+                enctype="multipart/form-data"
+                class="write"
+            >
+                <textarea
+                    required
+                    name="post"
+                    placeholder="type your post here"
+                ></textarea>
+                <label for="img">select photo</label
+                ><input id="img" name="img" type="file" class="file" />
+                <input type="hidden" name="post_id" value="{{post_id}}" />
+                <button type="submit" class="button">post</button>
+            </form>
+                <div class="comment">
+                {%for comment in comments %}
+                <div class="comment post">
+                    <div class="author">
+                        <p class="name">{{comment.author.name}}</p>
+                        </div>
+                    <div class="content">
+                        {{comment.post}} 
+                        </div>
+                        
+                    {%if comment.image%}
+                        <img src="{{comment.image}}" />
+                    {%endif%}
+                    <a
+                        href="/delete_post?post={{comment.id}}&id={{comment.post_id}}"
+                        style="color: red"
+                        >delete the post</a
+                    >
+                </div>
+                {%endfor%}
+            </div>
+            </div>
+        </main>
+        
+    </body>
+</html>

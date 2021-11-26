@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FakeBook</title>
+		<link rel="stylesheet" href="../static/syles/index.css" />
+	</head>
+	<body>
+		<nav class="nav">
+			<div class="title">
+				<h4>Fakebook</h4>
+			</div>
+			<div class="pages">
+				<h5 data-content="posts" id="home" class="active">
+					<a href="/">POSTS</a>
+				</h5>
+				<h5 data-content="profile" id="pro">
+					<a href="/profile" >PROFILE</a>
+				</h5>
+				<h5 id="search"><a href="/logout">logout</a></h5>
+			</div>
+		</nav>
+		<main>
+			<div class="posts" id="posts">
+				<form method="POST" action="/send_post" enctype="multipart/form-data" class="write">
+					<textarea required name="post" placeholder="type your post here"></textarea>
+					<label for="img">select photo</label><input id="img" name="img" type="file" class="file" />
+					<button type="submit" class="button">post</button>
+				</form>
+				{% for post in posts %}
+				<div class="post">
+					{%if post.author == current_user%}
+					<a href="/delete_post?post={{post.id}}" style="color: red">delete the post</a>
+					{%endif%}
+					<div class="content">
+						<div class="author">{{post.author.name}}</div>
+						<p>{{post.post}}</p>
+						{%if post.image%}
+
+						<img data-src="{{post.image}}" />
+						{%endif%}
+					</div>
+					<a href="/comments?post_id={{post.id}}" style="color: #0baa9a">comments</a>
+				</div>
+				{%endfor%}
+				<script>
+					window.onload = () => {
+						imgs = document.querySelectorAll("img");
+						imgs.forEach((img) => {
+							img.src = img.dataset["src"];
+						});
+					};
+				</script>
+			</div>
+		</main>
+	</body>
+</html>

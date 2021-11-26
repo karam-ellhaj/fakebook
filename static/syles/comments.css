@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #101d25;  
+    color: white;
+}
+
+.comments-section{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+}
+.comments{
+    align-self: flex-start;
+    margin-left: 2vw;
+}
+
+.author{    
+    font-size: 1.5em;
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    border-bottom: black 2px solid;
+}
+
+.content{
+    background-color: #232d36;
+    border-radius: 5px;
+    color: white;
+    margin-left: 1vw;
+    width:70% ;
+    padding: 10px;
+}
+img{
+    margin: 20px;
+    margin-left: 10%;
+    border-radius: 20px;
+}
+
+.form{
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea{
+    resize: none;
+    border: black 1px solid;
+    border-radius: 3px;
+    width: 30%;
+    margin: 20px;
+}
+button{
+    width: 10%;
+    background-color: blue;
+    font-size: larger;
+    color: white;
+    border:blue 2px solid;
+    border-radius: 3px;
+}
+label{
+    margin: 20px;
+}
+input[type=file]{
+    display: none;
+
+}
+img{
+    width: 20%;
+}
