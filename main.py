@@ -1,5 +1,17 @@
+"""
+ you must install some python packeges for it to run
+ 
+ run following comands
+ 
+ pip install flask
+ pip install flask-sqlalchemy
+ 
+ 
+ 
 
-from flask import Flask, session,request,flash
+
+"""
+from flask import Flask, session,request
 import os
 from flask.helpers import make_response
 from flask.json import jsonify
@@ -177,6 +189,9 @@ def logout():
         session.popitem() 
         return redirect("/login")
 
-
+    
 if __name__=="__main__":
+ 
+ 
     app.run(debug=True)#,host="192.168.43.119")
+  
