@@ -1,0 +1,32 @@
+body{
+    background-color: #232d36;
+    color :white;
+}
+a{
+    color: cornsilk;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #232d36;
+    height: 90vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+input{
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 300px ;
+    height: 30px;
+}
+button{
+    width: 300px;
+    height: 35px;
+    background-color:white ;
+    border-radius: 5px;
+    color: #232d36;
+    font-size: large;
+    margin-top: 15px;
+}
